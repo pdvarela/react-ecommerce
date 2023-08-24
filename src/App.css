@@ -111,3 +111,10 @@
   font-size: 16px;
   color: white;
 }
+
+/* Item list */
+.ItemListContainer{
+  display: flex;
+  justify-content: center;
+  
+}

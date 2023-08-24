@@ -1,7 +1,8 @@
 import './App.css';
 import NavBar from './components/navBar/navBar';
 import Barracategorias from './components/barracategorias/Barracategorias';
-import CartWidget from './components/CartWidget/CartWidget';
+import ItemListContainer from './components/itemsContainer/ItemsListContainer';
+
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Barracategorias/>
+      <ItemListContainer items={'ItemListContainer'}/>
     </div>
   );
 }
