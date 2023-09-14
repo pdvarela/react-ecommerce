@@ -1,13 +1,14 @@
 import React from "react";
-import "./item.css";
+import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
-const Item = ({ nombre, id, categoria, precio, imagen, descripcion }) => {
+const ItemDetail = ({ nombre, id, categoria, precio, imagen, descripcion }) => {
   
   return (
-    <div className="card card-sm card-fixed-height card-fixed-width">
+    <div className="card ">
       <img src={imagen} alt={nombre} className="card-img-top" />
-      <div className="card-body " style={{ maxHeight: "350px" }}>
+      <div className="card-body">
         <h5 className="card-title fw-bold list-group-item">{nombre}</h5>
         <br />
           <p><span className="fw-bold" >Categoria: </span> {categoria}
@@ -15,16 +16,17 @@ const Item = ({ nombre, id, categoria, precio, imagen, descripcion }) => {
           <span className="fw-bold" >ID:</span> {id}
           <br />
           <span className="fw-bold" >Descripcion:</span> {descripcion}
-          {descripcion && descripcion.slice(0, 50)} ...
           <br />
           <br />
           <span className="fw-bold" >Precio:</span> {precio}</p>
           <div>
-            <Link to={`/producto/${id}`} className="btn btn-primary">Ver detalles</Link>
+            <ItemCount initial={1} stock={50} agregarAlCarrito={ (contador) => alert(`Cantidad agregada ${contador}`)} />
           </div>
+        
+        <Link to= "/" className="btn btn-primary">Volver</Link>
       </div>
     </div>
   );
 };
 
-export default Item;
+export default ItemDetail;

@@ -1,0 +1,54 @@
+.miBtnAdd {
+    background-color: #10c17d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    min-width: 30px;
+}
+
+.pItemCount {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 5px;
+    text-align: center;
+}
+
+
+
+.miBtn- {
+    background-color: #c11036;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    min-width: 30px;
+}
+
+.miBtn{
+    background-color: #1b2dcc;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+}
+  
+.miBtn:hover {
+    background-color: #0b3cc4;
+ }
+
+.itemCountContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

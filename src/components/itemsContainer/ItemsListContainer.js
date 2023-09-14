@@ -13,7 +13,7 @@ const ItemListContainer = ({items}) => {
 
         funcion(categoria)
         .then(respuesta => setProductos(respuesta))
-        .catch(error => console.log(error))
+        .catch(error => console.error(error))
 
     },[categoria])
 
@@ -21,7 +21,6 @@ const ItemListContainer = ({items}) => {
 
         
         <div className="itemListContainer">
-            <h1 className="tituloListContainer"> {items} </h1>
             <ItemList productos={productos} />
         </div>
     )

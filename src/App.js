@@ -5,6 +5,7 @@ import Barracategorias from './components/barracategorias/Barracategorias';
 import ItemListContainer from './components/itemsContainer/ItemsListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
+
 function App() {
   return (
 
@@ -14,12 +15,11 @@ function App() {
       <Routes>
         <Route path='/' element= {<ItemListContainer/>} />
         <Route path='/categoria/:categoria' element= {<ItemListContainer/>} />
-        <Route path='/item/id' element= {<ItemDetailContainer/>} />
-        <Route path='*' element= {<h1>SITIO EN CONSTRUCCION</h1>} />
+        <Route path='/producto/:id' element= {<ItemDetailContainer/>} />
+        {/* <Route path='*' element= {<h1>SITIO EN CONSTRUCCION</h1>} /> */}
         <Route />
       </Routes>
     </BrowserRouter>
-
   );
 }
 

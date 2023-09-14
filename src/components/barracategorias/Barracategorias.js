@@ -1,18 +1,19 @@
 import { NavLink } from "react-router-dom";
+import "./barraCategorias.css";
 const Barracategorias = () => {
   const categories = ["Libros", "Cursos", "Juegos", "Servicios", "Kits", "otros"];
 
   return (
     <nav className="categories-bar">
-      <ul>
-        {categories.map((category) => (
-          <ul>
+      
+        {categories.map((category,index) => (
+          <ul key={index}>
             <li>
-              <NavLink to={`/categoria/${category}`}>{category.toUpperCase()}</NavLink>
+              <NavLink to={`/categoria/${category}`} className={({isActive}) => isActive ? "ActiveOption" : "Option"}>{category.toUpperCase()}  </NavLink>
             </li>
           </ul>
         ))}
-      </ul>
+      
     </nav>
   );
 };
