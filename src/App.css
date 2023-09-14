@@ -93,23 +93,29 @@
 
 .categories-bar ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
+  gap: 10px;
 }
 
 .categories-bar li {
   list-style-type: none;
   margin: 0 10px;
-
+  position: static;
+  text-align: center;
 }
 
 .categories-bar li a {
-  display: block;
   padding: 10px 15px;
   text-decoration: none;
   font-size: 16px;
   color: white;
+  gap: 5px;
+}
+
+.categories-bar li:hover{
+  font-weight: 500;
 }
 
 /* Item list */

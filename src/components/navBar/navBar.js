@@ -1,18 +1,19 @@
 import logo from "./assets/mainBlack.svg"
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className="navbar bg-light navbar-expand-lg">
       <div className="container-fluid px-5 py-4">
-        <a className="navbar-brand" href="./index.html">
+        <Link to="/" className="navbar-brand">
           <img
             className="logo"
             src={logo}
             alt="Krecenti Logo"
             width="150px"
           />
-        </a>
+        </Link>
         {/* <!-- Boton Menu Hamburguesa --> */}
         <button
           className="navbar-toggler rounded-0 border-0 me-3"
@@ -33,13 +34,11 @@ const NavBar = () => {
           <div className="mx-auto"> </div>
           <ul className="navbar-nav ms-auto pe-4 mb-2 mb-lg-0">
             <li className="nav-item ps-3">
-              <a
-                className="nav-link active menu_uline"
+              <Link to="./"                className="nav-link active menu_uline"
                 aria-current="page"
-                href="./secciones/enDesarrollo.html"
               >
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="nav-item ps-3">
               <a className="nav-link" href="./secciones/enDesarrollo.html">
@@ -57,9 +56,9 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item ps-3">
-              <a className="nav-link" href="./index.html">
+              <Link to="./" className="nav-link">
                 Tienda
-              </a>
+              </Link>
             </li>
                <CartWidget />
           </ul>
