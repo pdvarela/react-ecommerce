@@ -4,6 +4,7 @@ import NavBar from './components/navBar/navBar';
 import Barracategorias from './components/barracategorias/Barracategorias';
 import ItemListContainer from './components/itemsContainer/ItemsListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import EnConstruccion from './components/EnConstruccion/EnConstruccion';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Route path='/' element= {<ItemListContainer/>} />
         <Route path='/categoria/:categoria' element= {<ItemListContainer/>} />
         <Route path='/producto/:id' element= {<ItemDetailContainer/>} />
-        {/* <Route path='*' element= {<h1>SITIO EN CONSTRUCCION</h1>} /> */}
+        <Route path='*' element= {<EnConstruccion />} />
         <Route />
       </Routes>
     </BrowserRouter>

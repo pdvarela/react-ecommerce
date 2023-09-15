@@ -2,5 +2,8 @@
     border-bottom: 3px solid rgba(0, 0, 255, 0.342);
     transition: border-bottom 0.6s ease-in-out 0.3s;
     transition-property: border-bottom;
-    transition-origin: 50% 50%;
+}
+
+.categories-bar{
+    margin-bottom: 40px;
 }

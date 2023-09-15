@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./barraCategorias.css";
 const Barracategorias = () => {
-  const categories = ["Libros", "Cursos", "Juegos", "Servicios", "Kits", "otros"];
+  const categories = ["Libros", "Cursos", "Juegos", "Servicios", "Kits", "Otros"];
 
   return (
     <nav className="categories-bar">

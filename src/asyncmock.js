@@ -8,6 +8,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/101/400/253",
     descripcion:
       "Un libro que te guiará en tu camino hacia el crecimiento personal y te ayudará a descubrir tu verdadero potencial.",
+    stock: 50,
   },
   {
     nombre: "Curso de coaching por valores",
@@ -17,6 +18,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/102/399/252",
     descripcion:
       "Aprende las técnicas y herramientas del coaching por valores para alcanzar tus metas y vivir una vida más plena y significativa.",
+    stock: 100,
   },
   {
     nombre: "Juego de mesa sobre valores",
@@ -26,6 +28,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/103/398/250",
     descripcion:
       "Diviértete mientras aprendes sobre valores importantes como la honestidad, el respeto y la empatía, a través de este juego de mesa educativo.",
+    stock: 20,
   },
   {
     nombre: "Camisa con mensaje inspirador",
@@ -35,6 +38,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/104/399/251",
     descripcion:
       "Viste con estilo y transmite un mensaje inspirador con esta camisa que te recordará la importancia de vivir de acuerdo a tus valores.",
+    stock: 50,
   },
   {
     nombre: "Taza motivacional",
@@ -44,6 +48,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/110/400/251",
     descripcion:
       "Empieza tus mañanas con una dosis de motivación con esta taza que te inspirará a perseguir tus sueños y alcanzar tus metas.",
+    stock: 120,
   },
   {
     nombre: "Kit de meditación",
@@ -53,6 +58,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/106/401/251",
     descripcion:
       "Encuentra la calma y la serenidad en tu vida diaria con este kit de meditación que incluye todo lo que necesitas para practicar la meditación y cultivar la paz interior.",
+    stock: 10,
   },
   {
     nombre: "Libro de autoayuda",
@@ -62,6 +68,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/107/401/250",
     descripcion:
       "Un libro que te ayudará a superar tus retos y alcanzar tus objetivos.",
+    stock: 55,
   },
   {
     nombre: "Curso de desarrollo personal",
@@ -71,6 +78,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/108/400/249",
     descripcion:
       "Aprende las habilidades y herramientas que necesitas para crecer como persona.",
+    stock: 10,
   },
   {
     nombre: "Juego de mesa de desarrollo personal",
@@ -80,6 +88,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/109/400/250",
     descripcion:
       "Diviértete mientras aprendes sobre ti mismo y sobre tus valores.",
+    stock: 15,
   },
   {
     nombre: "Kit de desarrollo personal",
@@ -89,6 +98,7 @@ const misProductos = [
     imagen: "https://picsum.photos/id/110/400/251",
     descripcion:
       "Obtén todo lo que necesitas para empezar tu viaje de desarrollo personal.",
+    stock: 50,
   },
 ];
 
