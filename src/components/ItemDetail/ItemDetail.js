@@ -2,9 +2,27 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { CartContext } from "../../context/cartContext";
+import { useContext } from "react";
+
 
 const ItemDetail = ({ nombre, id, categoria, precio, imagen, descripcion, stock }) => {
   
+  const [addQty, setAddQty] = useState(0);
+
+  const {addToCart} = useContext(CartContext);
+
+  const qtyHandler = (qty) => {
+    setAddQty(qty);
+  
+    const item = {id, nombre, precio};
+    addToCart(item, qty)
+
+  }
+  
+  
+
   return (
     <div className="card cardDetail">
       <img src={imagen} alt={nombre} className="card-img-top" />
@@ -19,11 +37,16 @@ const ItemDetail = ({ nombre, id, categoria, precio, imagen, descripcion, stock 
           <br />
           <br />
           <span className="fw-bold" >Precio:</span> {precio}</p>
-          <div>
-            <p className="itamDetailStockDisplay"> {`Disponible: ${stock}`} </p>
-            <ItemCount initial={1} stock={stock} agregarAlCarrito={ (contador) => alert(`Cantidad agregada ${contador}`)} />
-          </div>
-        
+          
+          {
+            <div>
+              <p className="itamDetailStockDisplay"> {`Disponible: ${stock}`} </p>
+              {
+                addQty > 0 ? (<Link to="/cart" className="btn btn-primary"> Terminar Compra</Link>) : (<ItemCount initial={1} stock={stock} agregarAlCarrito={qtyHandler} />)
+              }
+            </div>
+          }
+
         <Link to= "/" className="btnVolver btn-primary">Cerrar</Link>
       </div>
     </div>
