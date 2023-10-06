@@ -16,12 +16,12 @@ const ItemDetail = ({ nombre, id, categoria, precio, imagen, descripcion, stock 
   const qtyHandler = (qty) => {
     setAddQty(qty);
   
-    const item = {id, nombre, precio};
+    // Aca se estrutura Mi Item
+    const item = {id, nombre, precio, imagen};
     addToCart(item, qty)
 
   }
-  
-  
+    
 
   return (
     <div className="card cardDetail">

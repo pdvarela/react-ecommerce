@@ -12,9 +12,10 @@ export const CartHandler = ({children}) => {
     const [total, setTotal] = useState(0);
     const [itemsQty, setItemsQty] = useState(0);
 
-    console.log(cart) // provisional para evaluar funcionalidad //
+    console.log("cart"); // provisional para evaluar funcionalidad //
 
     const addToCart = (item, qty) => {
+        
 
         const itemInCart = cart.find( prod => prod.item.id === item.id);
 
