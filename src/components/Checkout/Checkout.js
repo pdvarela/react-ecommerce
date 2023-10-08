@@ -96,7 +96,7 @@ const Checkout = () => {
                     error && <p> ❌ {error} </p>
                 }
 
-                <button type="submit"> Confirmar y finalizar compra</button>
+                <button className="btn btn-primary" type="submit"> Confirmar y finalizar compra</button>
             </form>
 
             {

@@ -1,0 +1,25 @@
+/* Estilos para el componente de carrito de compras */
+.container {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    margin-top: 10px;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Personaliza los estilos de Bootstrap según sea necesario */
+  .btn-primary {
+    margin-right: 10px;
+  }
+  
+  /* Añade más estilos personalizados según tus necesidades */
