@@ -1,25 +1,48 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./itemListContainer.css";
-import { getProductos, getProductByCategory } from "../../asyncmock";
+// import { getProductos, getProductByCategory } from "../../asyncmock";
 import ItemList from "../itemList/ItemList";
 import "../EnConstruccion/EnConstruccion.css";
+import { collection, getDocs, where, query } from "firebase/firestore";
+import { db } from "../../services/config";
 
 const ItemListContainer = ({ items }) => {
   const [productos, setProductos] = useState([]);
   const { categoria } = useParams();
   const [cargando, setCargando] = useState(true);
 
-  useEffect(() => {
-    const funcion = categoria ? getProductByCategory : getProductos;
+//   useEffect(() => {
+//     const funcion = categoria ? getProductByCategory : getProductos;
 
-    funcion(categoria)
-    .then((respuesta) => {
-      setCargando(false);
-      setProductos(respuesta);
-    })
-    .catch((error) => console.error(error));
-}, [categoria]);
+//     funcion(categoria)
+//     .then((respuesta) => {
+//       setCargando(false);
+//       setProductos(respuesta);
+//     })
+//     .catch((error) => console.error(error));
+// }, [categoria]);
+
+  useEffect( () => {
+    setCargando(true);
+      const misProductos = categoria ? query(collection(db, "inventory"), where("categoria", "==", categoria)) : collection(db, "inventory");
+      getDocs(misProductos)
+      .then(res => {
+        const nuevosProductos = res.docs.map( doc => {
+          const data = doc.data()
+          return {id: doc.id, ...data}
+          
+        })
+        setCargando(false);
+        setProductos(nuevosProductos);
+      })
+      .catch(error => console.log(error))
+  }, [categoria])
+
+
+
+
+
 
 return (
     <div className="itemListContainer">
