@@ -1,0 +1,152 @@
+.gridItemCheckout {  display: grid;
+    align-items: center;
+    justify-items: center;
+    max-width: 60%;
+    max-height: 10%;
+    margin-bottom: 0.5em;
+    padding: 0.8em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "imgcheckout nombrecheckout nombrecheckout subtotalcheckout"
+      "imgcheckout unidadescheckout preciocheckout subtotalcheckout";
+  }
+
+  .gridItemCheckout:hover {
+    background-color: rgba(255, 255, 255, 0.357);
+  }
+
+  
+  .imgcheckout { grid-area: imgcheckout; 
+max-width: 100%; border-radius: 4px;
+transform: scale(1);
+transition: transform 0.3s ease-in-out;
+}
+
+.imgcheckout:hover{
+    transform: scale(1.2);
+}
+  
+  .nombrecheckout { grid-area: nombrecheckout; font-size: 1rem;}
+  
+  .unidadescheckout { grid-area: unidadescheckout; }
+  
+  .preciocheckout { grid-area: preciocheckout; display: flex; align-items: center; justify-content: center;}
+  
+  .subtotalcheckout { grid-area: subtotalcheckout; border-left: 1px solid grey; height: 60%; display: flex; align-items: center; justify-content: center; padding: 1em;}
+  
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: start;
+    margin: 2rem;
+    padding: 1rem 1rem 3rem 1rem;
+    background-color: rgba(149, 158, 173, 0.247);
+    border-radius: 4px;
+  }
+
+  .totalcheckout{
+    width: 58%;
+    background-color: rgb(22, 82, 246);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    font-size: large;
+  }
+
+  .formulario-autenticacion{
+    display: flex;
+    border: 1px solid black;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    border-radius: 4px;
+    background-color: white;
+  }
+
+  .seccionformulario{
+    padding: 0.2rem;
+    border: none;
+    width: 100%;
+    outline: none;
+  }
+  .seccionformulario:focus {
+    background-color: #dfe2eb;
+    border-radius: 5px;
+  }
+
+  .label {
+    width: 40%;
+  }
+
+  .emailconfirmacion{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.501);
+  }
+
+  .inputLabelscontainer{
+    margin: 1rem;
+
+  }
+
+  .formtitle {
+    margin-top: 1rem;
+  }
+
+  .checkoutTitle{
+    margin: 2rem;
+  }
+
+  @keyframes parpadeo {
+    0% {
+      color: rgba(255, 0, 0, 0.17); 
+    }
+    50% {
+      color: #ff0000;
+    }
+    100% {
+      color: rgba(255, 0, 0, 0.17);
+    }
+    
+  }
+  
+  .errorformulario{
+      animation: parpadeo 1.5s ease infinite, detener 8s;
+      font-size: small;
+      margin-bottom: 2rem;
+      
+    }
+
+    @keyframes detener {
+          to {
+          visibility: hidden;
+          }
+      }
+
+      .agradecimientocompra{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 6rem 4rem 4rem 4rem;
+        flex-direction: column;
+        background-color: #0EAE93;
+        padding: 2rem;
+        color: white;
+      }
+
+      .graciasportucompra{
+        font-weight: 900;
+        font-size: xx-large;
+        margin: 1rem;
+      }
+      .nrodeorden{
+        margin: 0rem 1rem 3rem 1rem;
+        color: rgb(226, 232, 228);
+        font-weight: 300;
+      }
+   

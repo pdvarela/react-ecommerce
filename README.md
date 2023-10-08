@@ -9,4 +9,4 @@ Se agregaron algunos estilos basicos y efectos.
 
 Se utilizo algunas clases para establecer un estilo basico con boostrap
 
-Uso Firebase pa los datos de productos
+Uso Firebase para los datos de productos sustituyendo el Mock

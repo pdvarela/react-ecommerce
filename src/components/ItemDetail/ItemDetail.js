@@ -24,32 +24,38 @@ const ItemDetail = ({ nombre, id, categoria, precio, imagen, descripcion, stock 
     
 
   return (
-    <div className="card cardDetail">
-      <img src={imagen} alt={nombre} className="card-img-top" />
-      <div className="card-body cardBodyDetail">
-        <h5 className="card-title fw-bold list-group-item">{nombre}</h5>
-        <br />
-          <p><span className="fw-bold" >Categoria: </span> {categoria}
-          <br />
-          <span className="fw-bold" >ID:</span> {id}
-          <br />
-          <span className="fw-bold" >Descripcion:</span> {descripcion}
-          <br />
-          <br />
-          <span className="fw-bold" >Precio:</span> {precio}</p>
-          
-          {
-            <div>
-              <p className="itamDetailStockDisplay"> {`Disponible: ${stock}`} </p>
-              {
-                addQty > 0 ? (<Link to="/cart" className="btn btn-primary"> Terminar Compra</Link>) : (<ItemCount initial={1} stock={stock} agregarAlCarrito={qtyHandler} />)
-              }
-            </div>
-          }
+  <div className="container">
+      <div className="row justify-content-center">
+        <di className="col-md-4">
+          <div className="card cardDetail">
+            <img src={imagen} alt={nombre} className="card-img-top" />
+            <div className=" cardBodyDetail">
+              <h5 className="card-title fw-bold list-group-item">{nombre}</h5>
+              <br />
+                <p><span className="fw-bold" >Categoria: </span> {categoria}
+                <br />
+                <span className="fw-bold" >ID:</span> {id}
+                <br />
+                <span className="fw-bold" >Descripcion:</span> {descripcion}
+                <br />
+                <br />
+                <span className="fw-bold" >Precio:</span> {precio}</p>
+                
+                {
+                  <div>
+                    <p className="itamDetailStockDisplay"> {`Disponible: ${stock}`} </p>
+                    {
+                      addQty > 0 ? (<Link to="/cart" className="btn btn-primary"> Terminar Compra</Link>) : (<ItemCount initial={1} stock={stock} agregarAlCarrito={qtyHandler} />)
+                    }
+                  </div>
+                }
 
-        <Link to= "/" className="btnVolver btn-primary">Cerrar</Link>
+              <Link to= "/" className="btnVolver btn-primary">Cerrar</Link>
+            </div>
+          </div>
+        </di>
       </div>
-    </div>
+  </div>
   );
 };
 

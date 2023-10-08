@@ -1,25 +1,35 @@
-/* Estilos para el componente de carrito de compras */
-.container {
-    margin-top: 20px;
+.containercontrolescheckout {  display: grid;
+    align-items: center;
+    justify-items: end;
+    max-width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . . qtytotal"
+      ". . . total"
+      ". . btnvaciar btnfinalizarcompra";
+  }
+
+  .qtycart{
+    font-weight: 600;
   }
   
-  h2 {
-    margin-top: 10px;
+  .qtytotal { grid-area: qtytotal; font-size: 0.8rem; }
+  
+  .total { grid-area: total; }
+  
+  .btnvaciar { grid-area: btnvaciar; }
+  
+  .btnfinalizarcompra { grid-area: btnfinalizarcompra; }
+
+  .containercheckout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
   }
   
-  table {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  th, td {
-    text-align: center;
-    vertical-align: middle;
-  }
-  
-  /* Personaliza los estilos de Bootstrap según sea necesario */
-  .btn-primary {
-    margin-right: 10px;
-  }
-  
-  /* Añade más estilos personalizados según tus necesidades */

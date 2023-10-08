@@ -1,0 +1,32 @@
+.containercartitem {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr [img] 0.3fr;
+    background-color: rgba(114, 118, 155, 0.182);
+    border-radius: 3px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    align-items: center;
+    margin-bottom: 0.5em;
+    padding: 2em;
+    grid-template-areas:
+      "img nombre nombre precio eliminar"
+      "img id id qty eliminar";
+    max-width: 60%;
+  }
+  
+  .nombre { grid-area: nombre; font-size: 1em;}
+  
+  .id { grid-area: id; }
+  
+  .img { grid-area: img;   max-width: 40%; border-radius: 4px;}
+  
+  .precio { grid-area: precio; }
+  
+  .qty { grid-area: qty; }
+  
+  .btn-eliminar{ grid-area: eliminar; font-size: 0.6em;   max-width: 50%; max-height: 60%;   border-radius: 4px; border: none; }
+  .btn-eliminar:hover{background-color: red; color: white;}
+  
+
+  
+  

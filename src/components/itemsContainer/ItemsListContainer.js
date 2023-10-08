@@ -12,16 +12,6 @@ const ItemListContainer = ({ items }) => {
   const { categoria } = useParams();
   const [cargando, setCargando] = useState(true);
 
-//   useEffect(() => {
-//     const funcion = categoria ? getProductByCategory : getProductos;
-
-//     funcion(categoria)
-//     .then((respuesta) => {
-//       setCargando(false);
-//       setProductos(respuesta);
-//     })
-//     .catch((error) => console.error(error));
-// }, [categoria]);
 
   useEffect( () => {
     setCargando(true);

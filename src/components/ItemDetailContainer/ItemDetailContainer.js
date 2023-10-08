@@ -24,12 +24,6 @@ const ItemDetailContainer = () => {
         .catch(error => console.log(error))
     },[id])
 
-    // useEffect (() => {
-        
-    //     getProductByID(id)
-    //     .then(respuesta => setProducto(respuesta))
-    //     .catch(error => console.error(error))
-    // }, [id])
 
     return(
         <div className="d-flex justify-content-center">

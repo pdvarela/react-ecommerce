@@ -1,8 +1,9 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { CartContext } from "../../context/cartContext"
 import { db } from "../../services/config"
 import { collection, addDoc} from "firebase/firestore"
 import { Link } from "react-router-dom"
+import "../Checkout/Checkout.css"
 
 
 const Checkout = () => {
@@ -13,6 +14,20 @@ const Checkout = () => {
     const [emailConfirmacion, setEmailConfirmacion] = useState("");
     const [error, setError] = useState("");
     const [ordenId, setOrdenId] = useState("");
+    const [mostrarTexto, setMostrarTexto] = useState(false);
+
+  useEffect(() => {
+    if (mostrarTexto) {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
+  }, [mostrarTexto]);
+
+  const scrollDown = () => {
+    setMostrarTexto(true);
+  };
 
     const {cart, clearCart, total, itemsQty} = useContext(CartContext);
 
@@ -50,63 +65,69 @@ const Checkout = () => {
 
     return  (
         <div>
-            <h2> CHECKOUT </h2>
-            <form onSubmit={formHandler}>
+            <form className="formContainer" onSubmit={formHandler}>
+            <h2 className="checkoutTitle"> CHECKOUT </h2>
                 {
                     cart.map(product => (
-                        <div key={product.item.id}>
-                            <img src={product.item.imagen} alt={product.item.imagen} ></img>
-                            <p> {product.item.nombre} x {product.qty} </p>
-                            <p> {product.item.precio} </p>
-                            <hr />
-                            <h4>Total: {total.toFixed(2)} </h4>
+                        <div className="gridItemCheckout" key={product.item.id}>
+                            <img className="imgcheckout" src={product.item.imagen} alt={product.item.imagen} ></img>
+                            <h5 className="nombrecheckout"> {product.item.nombre} </h5>
+                            <p className="unidadescheckout"> {product.qty} Unidades </p>
+                            <p className="preciocheckout">Precio {product.item.precio}$ </p>
+                            <p className="subtotalcheckout">Sub-total <br/>{(product.item.precio * product.qty).toFixed(2) }$ </p>
                         </div>
 
                     ))
-
+                    
                 }
+                <p className="totalcheckout">🪙 Total: {total.toFixed(2)}$  </p>
                 <hr />
+                <h4 className="formtitle">INGRESA TUS DATOS</h4>
+                <div className="inputLabelscontainer">
 
-                <div className="formulario-autenticacion">
-                    <label htmlFor="nombre">Nombre</label>
-                    <input type="text" value={nombre} id="nombre" onChange={(e) => setNombre(e.target.value)}/>
-                </div>
+                    <div className="formulario-autenticacion">
+                        <label className="seccionformulario label" htmlFor="nombre">Nombre</label>
+                        <input className="seccionformulario" type="text" value={nombre} id="nombre" onChange={(e) => setNombre(e.target.value)}/>
+                    </div>
 
-                <div className="formulario-autenticacion">
-                    <label htmlFor="apellido">Apellido</label>
-                    <input type="text" value={apellido} id="apellido" onChange={(e) => setApellido(e.target.value)}/>
-                </div>
+                    <div className="formulario-autenticacion">
+                        <label className="seccionformulario label" htmlFor="apellido">Apellido</label>
+                        <input className="seccionformulario" type="text" value={apellido} id="apellido" onChange={(e) => setApellido(e.target.value)}/>
+                    </div>
 
-                <div className="formulario-autenticacion">
-                    <label htmlFor="telefono">Teléfono</label>
-                    <input type="text" value={telefono} id="telefono" onChange={(e) => setTelefono(e.target.value)}/>
-                </div>
+                    <div className="formulario-autenticacion">
+                        <label className="seccionformulario label" htmlFor="telefono">Teléfono</label>
+                        <input className="seccionformulario" type="text" value={telefono} id="telefono" onChange={(e) => setTelefono(e.target.value)}/>
+                    </div>
 
-                <div className="formulario-autenticacion">
-                    <label htmlFor="email">E-mail</label>
-                    <input type="text" value={email} id="email" onChange={(e) => setEmail(e.target.value)}/>
-                </div>
+                    <div className="formulario-autenticacion">
+                        <label className="seccionformulario label" htmlFor="email">E-mail</label>
+                        <input className="seccionformulario" type="text" value={email} id="email" onChange={(e) => setEmail(e.target.value)}/>
+                    </div>
 
-                <div className="formulario-autenticacion">
-                    <label htmlFor="emailConfirmacion">E-mail Confirmación</label>
-                    <input type="text" value={emailConfirmacion} id="emailConfirmacion" onChange={(e) => setEmailConfirmacion(e.target.value)}/>
+                    <div className="formulario-autenticacion">
+                        <label className="seccionformulario label" htmlFor="emailConfirmacion">E-mail <span className="emailconfirmacion">(confirmación)</span></label>
+                        <input className="seccionformulario" type="text" value={emailConfirmacion} id="emailConfirmacion" onChange={(e) => setEmailConfirmacion(e.target.value)}/>
+                    </div>
                 </div>
                 
                 {
-                    error && <p> ❌ {error} </p>
+                    error && <p className="errorformulario"> ❌ {error} </p>
                 }
 
-                <button className="btn btn-primary" type="submit"> Confirmar y finalizar compra</button>
+                <button className="btn btn-primary" onClick={scrollDown} type="submit"> ✅ Confirmar y finalizar compra</button>
             </form>
 
             {
                 ordenId && (
-                    <div>
-                        <h2> ¡Gracias por tu compra!</h2>
-                        <h4>Tu numero de orden es {ordenId} </h4>
+                  <div className="agradecimientocompra">
+                        <h2>✅</h2>
+                        <h3 className="graciasportucompra"> ¡GRACIAS POR TU COMPRA!</h3>
+                        <h4 className="nrodeorden">Tu número de orden es:  <strong>{ordenId}</strong> </h4>
                         <Link to={"/"} className="btn btn-primary">Volver al inicio</Link>
                     </div>
                 )
+
             }
             
         </div>

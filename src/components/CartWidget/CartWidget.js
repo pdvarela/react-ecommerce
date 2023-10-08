@@ -11,7 +11,11 @@ const CartWidget = () => {
         <Link className="nav-link" to="/cart" id="carrito-icono">
           <img src={cart} className="cartIncon" alt="carrito" />
           {
-            itemsQty > 0 && <span id="carrito-contador" className="carrito-contador"> {itemsQty} </span>
+           <span className="position-absolute top-15 start-100 translate-middle badge rounded-pill">
+            {
+              itemsQty > 0 && <span id="carrito-contador" className="carrito-contador badge text-bg-secondary btn-primary bg-danger"> {itemsQty} </span>
+            }
+           </span> 
           }
         </Link>
       </li>
